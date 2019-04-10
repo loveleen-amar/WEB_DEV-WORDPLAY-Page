@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		word play
+	</title>
+   
+  
+    
+    
+    <script>
+        function namex()
+        {  
+            var input = document.getElementById("demo").value.split(" ").length;
+            document.getElementById("n_words").value=input;
+            
+            
+            var k= document.getElementById("demo").value.length;
+            var space= input-1;
+            var N_Characters= k-space;
+            document.getElementById("n_char").value=N_Characters;
+          
+            var n_dict=[];
+            var word=document.getElementById("demo").value.split(" ");
+            for(var i=0;i< word.length;i++){
+                 if(!n_dict[word[i]]){
+                     n_dict[word[i]]=1;
+                     
+                 }
+                 else{
+                     n_dict[word[i]]++; 
+                 }
+             }
+            
+            
+            for(var i in n_dict){
+                document.getElementById("recc").innerHTML += i +" "+ n_dict[i]+"<br>";
+            
+            }
+        }
+            
+    </script>
+</head>
+
+
+<body>
+
+	<div>
+	
+		
+        INPUT SENTENCES
+            <input id="demo" type="text" name="sentence">
+            
+            <button onclick="namex()">input here  </button> <br>
+            
+			total number of words
+			<input  id="n_words" type="text"> <br>
+			
+			total letters <input  id="n_char" type="text"> <br>
+			
+			Recurring words <span  id="recc" type="text"> 
+		
+
+	</div>
+	
+</body>
+</html>
